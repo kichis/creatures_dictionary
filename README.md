@@ -12,9 +12,13 @@
 |親|子|孫|
 |--|--|--|
 |Creature|Mammalian(哺乳類)|Cat|
-||〃|Canidae(イヌ科) |
+||〃|(Canidae(イヌ科)) |
 ||〃|Bovidae(ウシ科)|
 |〃|Bird||
-|〃|Reptile(爬虫類)||
-|〃|Fish||
+|〃|(Reptile(爬虫類))||
+|〃|(Fish)||
 |〃|Insect||
+- ()付きのクラスは親クラスから変更がないクラスだが、今後の保守性という観点からtypeごとにクラスを作成（継承）することとする。
+
+## 学んだこと
+- includeとrequireの違いは、(include)警告の上処理を継続するか、(require)停止するか、の違い。
