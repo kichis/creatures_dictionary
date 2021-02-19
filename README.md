@@ -12,7 +12,8 @@
 |親|子|孫|
 |----|----|----|
 |Creature|-|-|
-|-|Mammalian(哺乳類)|Cat|
+|-|Mammalian(哺乳類)|-|
+|-|-|Cat|
 |-|-|Canidae(イヌ科) |
 |-|-|Bovidae(ウシ科)|
 |-|Bird|-|
