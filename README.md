@@ -16,7 +16,7 @@
 |-|-|Cat|
 |-|-|Canidae(イヌ科) |
 |-|-|Bovidae(ウシ科)|
-|-|Bird|-|
-|-|Reptile(爬虫類)|-|
-|-|Fish|-|
+||Bird|-|
+||Reptile(爬虫類)|-|
+||Fish|-|
 |-|Insect|-|
