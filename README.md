@@ -10,13 +10,11 @@
   
 ## Class構成
 |親|子|孫|
-|----|----|----|
-|Creature|-|-|
-|-|Mammalian(哺乳類)|-|
-|-|-|Cat|
-|-|-|Canidae(イヌ科) |
-|-|-|Bovidae(ウシ科)|
-||Bird|-|
-||Reptile(爬虫類)|-|
-||Fish|-|
-|-|Insect|-|
+|--|--|--|
+|Creature|Mammalian(哺乳類)|Cat|
+||〃|Canidae(イヌ科) |
+||〃|Bovidae(ウシ科)|
+|〃|Bird||
+|〃|Reptile(爬虫類)||
+|〃|Fish||
+|〃|Insect||
