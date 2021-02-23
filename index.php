@@ -1,5 +1,9 @@
 <?php
-include "creature.php";
+// エラー確認用
+ini_set('display_errors', 1);
+
+include "data.php";
+// include "mammalian.php";
 // $turtle->hello(); 
 
 ?>
