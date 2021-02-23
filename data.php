@@ -6,6 +6,7 @@ include "canidae.php";
 include "bovidae.php";
 include "bird.php";
 include "reptile.php";
+include "insect.php";
 
 // todo : all = setDesc
 // todo : all = change image
@@ -66,4 +67,13 @@ echo $turtle->getId() . "<br>";
 echo $turtle->getName() . "<br>";
 echo $turtle->getType() . "<br>";
 echo $turtle->getImg() . "<br>";
+
+
+$ant = new Insect('Ant', 'insect image');
+$mosquito = new Insect('Mosquito', 'insect image');
+$beetle = new Insect('Beetle', 'insect image');
+echo $ant->getId() . "<br>";
+echo $ant->getName() . "<br>";
+echo $ant->getType() . "<br>";
+echo $ant->getImg() . "<br>";
 ?>
