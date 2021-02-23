@@ -7,7 +7,7 @@ class Creature{
 	private $id;
 	private $name;
 	private $type; // = 子クラス
-	private $img;
+	private $img;  // img/~以降のパス
 	private $description;
 	
 	public function __construct($name, $type, $img){		
@@ -17,6 +17,10 @@ class Creature{
 		$this->img = $img;
 
 		self::$creatures[] = $this;
+	}
+
+	public static function findById($id){
+		return self::$creatures[$id];
 	}
 
 	// getter

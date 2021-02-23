@@ -3,7 +3,7 @@ ini_set('display_errors', 1);
 
 include "data.php";
 $id = $_GET['id'];
-// echo $id;
+$target = Creature::findById($id);
 
 ?>
 
@@ -20,8 +20,19 @@ $id = $_GET['id'];
     <div class="nav nav-bar bg-secondary">
         <h3 class="text-light my-3 ml-5">いきもの図鑑</h3>
     </div>
-    <div class="container">
-
+    <div class="container bg-warning">
+        <div class="text-center py-3">
+            <img src="<?= $target->getImg(); ?>" alt="" width="100" height="100">
+        </div>
+        <div id="body" class="text-center">
+            <h2><?= $target->getName(); ?></h2>
+            <p><?= $target->getId(); ?></p>
+            <h3><?= $target->getType(); ?></h3>
+            <h3>other</h3>
+        </div>
+        <div class="text-center">
+            <p><?= $target->getDesc(); ?></p>
+        </div>
 
 
 
