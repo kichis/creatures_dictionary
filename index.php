@@ -3,8 +3,6 @@
 ini_set('display_errors', 1);
 
 include "data.php";
-// include "mammalian.php";
-// $turtle->hello(); 
 
 ?>
 
@@ -23,18 +21,17 @@ include "data.php";
 		<h1 class="text-secondary m-0">いきもの図鑑</h1>
 	</div>
 
-	<div class="d-flex justify-content-around pt-5">
-
-		<div class="card" style="width: 18rem;">
-			
+	<div class="d-flex justify-content-around pt-5 row">
+		<?php foreach(Creature::getCreatures() as $creature): ?>
+		<div class="card my-3" style="width: 18rem;">		
 			<svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text></svg>
 			<div class="card-body">
-				<h5 class="card-title"><?= $turtle->getName() ?></h5>
-				<p class="card-text"><strong><?= $turtle->getType() ?></strong></p>
-				<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+				<h5 class="card-title"><?= $creature->getName() ?></h5>
+				<p class="card-text"><strong><?= $creature->getType() ?></strong></p>
+				<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.a <a href="detail.php?id=<?= $creature->getId() ?>" class="btn btn-info stretched-link">詳しく</a></p>
 			</div>
 		</div>
-		
+		<?php endforeach ?>
 	</div>
 
 

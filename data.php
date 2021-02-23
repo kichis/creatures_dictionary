@@ -14,6 +14,7 @@ include "fish.php";
 
 // todo : cat class = change habitat
 
+// Creatureクラスのコンストラクタで配列にプッシュしてしまっているので、インスタンスした後に個々の変数に入れる必要はないかも。
 $lion = new Cat('lion', 'image', 'jungle');
 $tiger = new Cat('tiger', 'image', 'jungle');
 $leopard = new Cat('leopard', 'image', 'jungle');

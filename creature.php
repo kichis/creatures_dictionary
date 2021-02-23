@@ -10,9 +10,7 @@ class Creature{
 	private $img;
 	private $description;
 	
-	public function __construct($name, $type, $img){
-		// self::$count ++ ;
-		
+	public function __construct($name, $type, $img){		
 		$this->id = ++self::$count;
 		$this->name = $name;
 		$this->type = $type;
