@@ -1,6 +1,5 @@
 <?php 
 
-
 class Creature{
 	private static $id = 0;
 
@@ -31,8 +30,5 @@ class Creature{
 	}
 
 }
-
-
-
 
 ?>

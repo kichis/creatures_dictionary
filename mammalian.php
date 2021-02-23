@@ -1,6 +1,5 @@
 <?php 
 
-
 class Mammalian extends Creature{
     private $family;
 

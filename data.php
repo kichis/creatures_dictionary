@@ -5,6 +5,8 @@ include "cat.php";
 include "canidae.php";
 include "bovidae.php";
 
+// todo : all = setDesc
+// todo : all = change image
 
 $turtle = new Creature('turtle', 'reptile', 'this is image');
 
@@ -14,6 +16,9 @@ echo $cat->getName() . "<br>";
 echo $cat->getType() . "<br>";
 echo $cat->getImg() . "<br>";
 echo $cat->getFamily() . "<br>";
+
+
+// todo : cat class = change habitat
 
 $lion = new Cat('lion', 'image', 'jungle');
 $tiger = new Cat('tiger', 'image', 'jungle');
@@ -33,7 +38,10 @@ echo $wolf->getType() . "<br>";
 echo $wolf->getImg() . "<br>";
 echo $wolf->getFamily() . "<br>";
 
+// todo : bovide = setVoice
+
 $cow = new Bovidae('cow', 'imag!');
+$cow = new Bovidae('sheep', 'imag!');
 echo $cow->getId() . "<br>";
 echo $cow->getName() . "<br>";
 echo $cow->getType() . "<br>";
