@@ -1,16 +1,18 @@
 <?php 
 
 class Creature{
-	private static $id = 0;
+	private static $count = 0;
 
+	private $id;
 	private $name;
 	private $type; // = 子クラス
 	private $img;
 	private $description;
 	
 	public function __construct($name, $type, $img){
-		self::$id ++ ;
-
+		self::$count ++ ;
+		
+		$this->id = self::$count;
 		$this->name = $name;
 		$this->type = $type;
 		$this->img = $img;
@@ -18,7 +20,8 @@ class Creature{
 	}
 
 	// getter
-	public static function getId(){ return self::$id; }
+	public static function getCount(){ return self::$count; }
+	public function getId(){ return $this->id; }
 	public function getName(){ return $this->name; }
 	public function getType(){ return $this->type; }
 	public function getImg(){ return $this->img; }
