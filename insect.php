@@ -1,8 +1,8 @@
 <?php 
 
 class Insect extends Creature{
-    public function __construct($name, $img){
-        parent::__construct($name, 'Insect', $img);
+    public function __construct($nameJP, $nameEN, $img){
+        parent::__construct($nameJP, $nameEN, '昆虫類', 'Insect', $img);
     }
 }
 

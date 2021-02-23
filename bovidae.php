@@ -3,8 +3,8 @@
 class Bovidae extends Mammalian{
     private $voice;
 
-    public function __construct($name, $img){
-        parent::__construct($name, $img, 'Bovidae');
+    public function __construct($nameJP, $nameEN, $img){
+        parent::__construct($nameJP, $nameEN, $img, 'ウシ科', 'Bovidae');
     }
 
     // getter

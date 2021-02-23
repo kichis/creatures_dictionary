@@ -3,8 +3,8 @@
 class Cat extends Mammalian{
     private $habitat;
 
-    public function __construct($name, $img, $habitat){
-        parent::__construct($name, $img, 'Cat');
+    public function __construct($nameJP, $nameEN, $img, $habitat){
+        parent::__construct($nameJP, $nameEN, $img, 'ネコ科', 'Cat');
 
         $this->habitat = $habitat;
     }

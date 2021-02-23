@@ -29,9 +29,21 @@ include "data.php";
 			<img src="img/<?= $creature->getImg();?>" alt="" width="100" height="200" class="bd-placeholder-img card-img-top border-bottom">
 			<!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text></svg> -->
 			<div class="card-body">
-				<h5 class="card-title"><?= $creature->getName() ?></h5>
-				<p class="card-text"><strong><?= $creature->getType() ?></strong></p>
-				<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.a </p>
+				<h5 class="card-title"><?= $creature->getNameJP() . $creature->getNameEN() ?></h5>
+				<p class="card-text"><strong><?= $creature->getTypeJP() . $creature->getTypeEN() ?></strong></p>
+				<?php if($creature instanceof mammalian):?>
+					<p class="card-text"><strong><?= $creature->getFamilyJP() . $creature->getFamilyEN() ?></strong></p>
+					<?php if($creature instanceof Cat):?>
+						<p class="card-text"><strong><?= $creature->getHabitat() ?></strong></p>
+					<?php elseif($creature instanceof Bovidae):?>
+						<p class="card-text"><strong><?= $creature->getVoice() ?></strong></p>
+					<?php endif?>
+				<?php elseif($creature instanceof Bird):?>
+					<p class="card-text"><strong><?= $creature->getSpeed() ?></strong></p>
+				<?php elseif($creature instanceof Fish):?>
+					<p class="card-text"><strong><?= $creature->getNumEggs() ?></strong></p>
+				<?php endif?>
+				<p class="card-text"><?= mb_strimwidth( strip_tags( $creature->getDesc() ), 0, 50, '…', 'UTF-8' );?></p>
 				<a href="detail.php?id=<?= $creature->getId() ?>" class="btn btn-info stretched-link">詳しく</a>
 			</div>
 		</div>

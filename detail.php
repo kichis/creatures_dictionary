@@ -22,12 +22,12 @@ $target = Creature::findById($id);
     </div>
     <div class="container bg-warning">
         <div class="text-center py-3">
-            <img src="<?= $target->getImg(); ?>" alt="" width="100" height="100">
+            <img src="img/<?= $target->getImg(); ?>" alt="" width="100" height="100">
         </div>
         <div id="body" class="text-center">
-            <h2><?= $target->getName(); ?></h2>
+            <h2><?= $target->getNameJP() . $target->getNameEN(); ?></h2>
             <p><?= $target->getId(); ?></p>
-            <h3><?= $target->getType(); ?></h3>
+            <h3><?= $target->getTypeJP(). $target->getTypeEN(); ?></h3>
             <h3>other</h3>
         </div>
         <div class="text-center">
