@@ -4,6 +4,8 @@ include "mammalian.php";
 include "cat.php";
 include "canidae.php";
 include "bovidae.php";
+include "bird.php";
+include "reptile.php";
 
 // todo : all = setDesc
 // todo : all = change image
@@ -48,5 +50,20 @@ echo $cow->getType() . "<br>";
 echo $cow->getImg() . "<br>";
 echo $cow->getFamily() . "<br>";
 
+$falcon = new Bird('Falcon', 'falcons image', 100);
+$sparrow = new Bird('Sparrow', 'sparrow image', 40);
+$pigeon = new Bird('Pigeon', 'pigeon image', 70);
+echo $falcon->getId() . "<br>";
+echo $falcon->getName() . "<br>";
+echo $falcon->getType() . "<br>";
+echo $falcon->getImg() . "<br>";
+echo $falcon->getSpeed() . "<br>";
 
+$turtle = new Reptile('turtle', 'image');
+$crocodile = new Reptile('crocodile', 'image');
+$lizard = new Reptile('lizard', 'image');
+echo $turtle->getId() . "<br>";
+echo $turtle->getName() . "<br>";
+echo $turtle->getType() . "<br>";
+echo $turtle->getImg() . "<br>";
 ?>
