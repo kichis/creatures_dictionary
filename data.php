@@ -14,6 +14,8 @@ include "fish.php";
 
 // Creatureクラスのコンストラクタで配列にプッシュしてしまっているので、インスタンスした後に個々の変数に入れる必要はないかも。
 $lion = new Cat('ライオン', 'Lion', 'lion.png', 'アフリカの（主に）サバンナや草原など');
+$lion->setDesc('');
+
 $tiger = new Cat('トラ', 'Tiger', 'tiger.png', 'アジアおよびロシア');
 $leopard = new Cat('ヒョウ', 'Leopard', 'leopard.png', 'アフリカ〜中央アジア〜極東までの多様な気候帯');
 

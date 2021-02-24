@@ -1,13 +1,8 @@
 <?php
 // エラー確認用
 ini_set('display_errors', 1);
-
 include "data.php";
-
-
-
 ?>
-
 
 <!DOCTYPE html>
 <html lang="ja">
