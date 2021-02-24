@@ -29,11 +29,11 @@ $falcon = new Bird('ハヤブサ', 'Falcon', 'falcon.png', 100);
 $sparrow = new Bird('スズメ', 'Sparrow', 'sparrow.png', 40);
 $pigeon = new Bird('ハト', 'Pigeon', 'pigeon.png', 70);
 
-$turtle = new Reptile('カメ', 'turtle', 'turtle.png');
-$crocodile = new Reptile('ワニ', 'crocodile', 'crocodile.png');
-$lizard = new Reptile('トカゲ', 'lizard', 'lizard.png');
+$turtle = new Reptile('カメ', 'Turtle', 'turtle.png');
+$crocodile = new Reptile('ワニ', 'Crocodile', 'crocodile.png');
+$lizard = new Reptile('トカゲ', 'Lizard', 'lizard.png');
 
-$ant = new Insect('アリ', 'Ant', 'ant.png');
+$ant = new Insect('アリ', 'Ant', 'Ant.png');
 $mosquito = new Insect('蚊', 'Mosquito', 'mosquito.png');
 $beetle = new Insect('カブトムシ', 'Beetle', 'beetle.png');
 

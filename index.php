@@ -26,25 +26,38 @@ include "data.php";
 	<div class="d-flex justify-content-around pt-5 row">
 		<?php foreach(Creature::getCreatures() as $creature): ?>
 		<div class="card my-3" style="width: 18rem;">		
-			<img src="img/<?= $creature->getImg();?>" alt="" width="100" height="200" class="bd-placeholder-img card-img-top border-bottom">
-			<!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text></svg> -->
+			<img src="img/<?= $creature->getImg();?>" alt="creature image" width="100" height="200" class="bd-placeholder-img card-img-top border-bottom">
 			<div class="card-body">
-				<h5 class="card-title"><?= $creature->getNameJP() . $creature->getNameEN() ?></h5>
-				<p class="card-text"><strong><?= $creature->getTypeJP() . $creature->getTypeEN() ?></strong></p>
-				<?php if($creature instanceof mammalian):?>
-					<p class="card-text"><strong><?= $creature->getFamilyJP() . $creature->getFamilyEN() ?></strong></p>
-					<?php if($creature instanceof Cat):?>
-						<p class="card-text"><strong><?= $creature->getHabitat() ?></strong></p>
-					<?php elseif($creature instanceof Bovidae):?>
-						<p class="card-text"><strong><?= $creature->getVoice() ?></strong></p>
-					<?php endif?>
-				<?php elseif($creature instanceof Bird):?>
-					<p class="card-text"><strong><?= $creature->getSpeed() ?></strong></p>
-				<?php elseif($creature instanceof Fish):?>
-					<p class="card-text"><strong><?= $creature->getNumEggs() ?></strong></p>
-				<?php endif?>
-				<p class="card-text"><?= mb_strimwidth( strip_tags( $creature->getDesc() ), 0, 50, '…', 'UTF-8' );?></p>
-				<a href="detail.php?id=<?= $creature->getId() ?>" class="btn btn-info stretched-link">詳しく</a>
+				<h5 class="card-title"><strong><?=$creature->getNameJP()?></strong><span class="text-muted  ml-3"><?=$creature->getNameEN()?></span></h5>
+				<p class="card-subtitle d-inline-flex"><strong><?= $creature->getTypeJP()?></strong><span class="text-muted ml-1"><?= $creature->getTypeEN()?></span></p>
+
+				<!-- 哺乳類の場合はもう１段階細かい分類まで表示 -->
+				<?php if($creature instanceof Mammalian):?>
+					<p class='card-subtitle d-inline-flex'><small><strong><?=$creature->getFamilyJP()?></strong><span class='text-muted ml-1'><?=$creature->getFamilyEN()?></span></small></p>
+				<?php 
+					endif;
+
+				// classごとに異なる項目を表示するエリア
+				$info = array('topic'=>'', 'value'=>'');
+				if($creature instanceof Cat){
+					$info['topic'] = '生息地 ： ';
+					$info['value'] = $creature->getHabitat();
+				}else if($creature instanceof Bovidae){
+					$info['topic'] = '鳴き声 ： ';
+					$info['value'] = $creature->getVoice();
+				}else if($creature instanceof Bird){
+					$info['topic'] = '飛行速度 ： ';
+					$info['value'] = $creature->getSpeed() . 'km/h';
+				}else if($creature instanceof Fish){
+					$info['topic'] = '産卵する卵の数 ： ';
+					$info['value'] = $creature->getNumEggs() . '個';				
+				}
+				?>
+				<p class="card-text mt-1"><?= $info['topic']?><strong><?= $info['value']?></strong></p>
+
+				<p class="card-text"><?= mb_strimwidth( strip_tags( $creature->getDesc() ), 0, 90, '…', 'UTF-8' );?></p>
+				<a href="detail.php?id=<?= $creature->getId() ?>" class="stretched-link d-flex justify-content-end">詳しく</a>
+
 			</div>
 		</div>
 		<?php endforeach ?>
